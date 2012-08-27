@@ -1,0 +1,2193 @@
+<!DOCTYPE html>
+<!--
+@copyright
+This file is part of Best250.
+
+    Best250 is free software: you can redistribute it and/or modify
+    it under the terms of the GNU General Public License as published by
+    the Free Software Foundation, either version 3 of the License, or
+    (at your option) any later version.
+
+    Best250 is distributed in the hope that it will be useful,
+    but WITHOUT ANY WARRANTY; without even the implied warranty of
+    MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+    GNU General Public License for more details.
+
+    You should have received a copy of the GNU General Public License
+    along with Foobar.  If not, see <http://www.gnu.org/licenses/>.
+
+    @Authour: Byorn De Silva Aug 27, 2012	
+-->
+<html>
+        <head>
+       <script type="text/javascript" charset="utf-8" src="cordova-2.0.0.js"></script>
+        <meta charset="utf-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1" />
+        <title>
+        </title>
+        <link rel="stylesheet" href="m.css" />
+        <link rel="stylesheet" href="my.css" />
+        <style>
+            /* App custom styles */
+        </style>
+        <script src="jqmin.js">
+        </script>
+        <script src="jqmobmin.js">
+        </script>
+        <script src="my.js">
+        </script>
+        <script type="text/javascript" charset="utf-8" src="cordova-2.0.0.js"></script>
+    </head>
+     <body>
+
+        <!-- Home -->
+        <div data-role="page" id="page1">
+            <div data-theme="a" data-role="header">
+		<h5>Best 250</h5>
+             </div>
+	   <div id="totwatched" style="background-color:black; color:white;">Total Watched </div>
+	   
+
+            <div  data-role="listview" style="padding: 15px" id="mainlist">
+       
+	 <ul data-role=\"listview\" data-divider-theme=\"b\" data-inset=\"true\"> <div style="color:green">Tap icon to find out how many you have seen </div>  </ul>
+      
+
+	
+	  
+            </div> 
+		
+        </div>
+        <script>
+
+//the data
+var jsonObj={
+  "Movies": {
+    "Movie": [
+      {
+        "id": "405",
+        "rank": "1",
+        "rating": "9.2",
+        "title": "The Godfather (1972)",
+        "year": "1970-1979",
+        "state": "ms"
+      },
+      {
+        "id": "406",
+        "rank": "2",
+        "rating": "9.0",
+        "title": "The Godfather: Part II (1974)",
+        "year": "1970-1979",
+        "state": "ms"
+      },
+      {
+        "id": "407",
+        "rank": "3",
+        "rating": "8.8",
+        "title": "One Flew Over the Cuckoo's Nest (1975)",
+        "year": "1970-1979",
+        "state": "ms"
+      },
+      {
+        "id": "408",
+        "rank": "4",
+        "rating": "8.7",
+        "title": "Star Wars: Episode IV - A New Hope (1977)",
+        "year": "1970-1979",
+        "state": "ms"
+      },
+      {
+        "id": "409",
+        "rank": "5",
+        "rating": "8.6",
+        "title": "Apocalypse Now (1979)",
+        "year": "1970-1979",
+        "state": "ms"
+      },
+      {
+        "id": "410",
+        "rank": "6",
+        "rating": "8.5",
+        "title": "Alien (1979)",
+        "year": "1970-1979",
+        "state": "ms"
+      },
+      {
+        "id": "411",
+        "rank": "7",
+        "rating": "8.5",
+        "title": "Taxi Driver (1976)",
+        "year": "1970-1979",
+        "state": "ms"
+      },
+      {
+        "id": "412",
+        "rank": "8",
+        "rating": "8.4",
+        "title": "A Clockwork Orange (1971)",
+        "year": "1970-1979",
+        "state": "ms"
+      },
+      {
+        "id": "413",
+        "rank": "9",
+        "rating": "8.4",
+        "title": "Chinatown (1974)",
+        "year": "1970-1979",
+        "state": "ms"
+      },
+      {
+        "id": "414",
+        "rank": "10",
+        "rating": "8.4",
+        "title": "Monty Python and the Holy Grail (1975)",
+        "year": "1970-1979",
+        "state": "ms"
+      },
+      {
+        "id": "415",
+        "rank": "11",
+        "rating": "8.4",
+        "title": "The Sting (1973)",
+        "year": "1970-1979",
+        "state": "ms"
+      },
+      {
+        "id": "416",
+        "rank": "12",
+        "rating": "8.3",
+        "title": "The Foster Brothers (1976)",
+        "year": "1970-1979",
+        "state": "ms"
+      },
+      {
+        "id": "417",
+        "rank": "13",
+        "rating": "8.3",
+        "title": "The Dunce Class on Vacation (1978)",
+        "year": "1970-1979",
+        "state": "ms"
+      },
+      {
+        "id": "418",
+        "rank": "14",
+        "rating": "8.2",
+        "title": "Saban, Son of Saban (1977)",
+        "year": "1970-1979",
+        "state": "ms"
+      },
+      {
+        "id": "419",
+        "rank": "15",
+        "rating": "8.2",
+        "title": "The Deer Hunter (1978)",
+        "year": "1970-1979",
+        "state": "ms"
+      },
+      {
+        "id": "420",
+        "rank": "16",
+        "rating": "8.2",
+        "title": "The Girl with the Red Scarf (1978)",
+        "year": "1970-1979",
+        "state": "ms"
+      },
+      {
+        "id": "421",
+        "rank": "17",
+        "rating": "8.2",
+        "title": "Jaws (1975)",
+        "year": "1970-1979",
+        "state": "ms"
+      },
+      {
+        "id": "422",
+        "rank": "18",
+        "rating": "8.2",
+        "title": "Annie Hall (1977)",
+        "year": "1970-1979",
+        "state": "ms"
+      },
+      {
+        "id": "423",
+        "rank": "19",
+        "rating": "8.2",
+        "title": "The Rascals' Class Misses its Grades (1976)",
+        "year": "1970-1979",
+        "state": "ms"
+      },
+      {
+        "id": "424",
+        "rank": "20",
+        "rating": "8.2",
+        "title": "Network (1976)",
+        "year": "1970-1979",
+        "state": "ms"
+      },
+      {
+        "id": "425",
+        "rank": "21",
+        "rating": "8.2",
+        "title": "Dersu Uzala (1975)",
+        "year": "1970-1979",
+        "state": "ms"
+      },
+      {
+        "id": "426",
+        "rank": "22",
+        "rating": "8.1",
+        "title": "The Crazy Class Wakes Up (1977)",
+        "year": "1970-1979",
+        "state": "ms"
+      },
+      {
+        "id": "427",
+        "rank": "23",
+        "rating": "8.1",
+        "title": "Life of Brian (1979)",
+        "year": "1970-1979",
+        "state": "ms"
+      },
+      {
+        "id": "428",
+        "rank": "24",
+        "rating": "8.1",
+        "title": "Sleuth (1972)",
+        "year": "1970-1979",
+        "state": "ms"
+      },
+      {
+        "id": "429",
+        "rank": "25",
+        "rating": "8.1",
+        "title": "Dog Day Afternoon (1975)",
+        "year": "1970-1979",
+        "state": "ms"
+      },
+      {
+        "id": "430",
+        "rank": "26",
+        "rating": "8.1",
+        "title": "Stalker (1979)",
+        "year": "1970-1979",
+        "state": "ms"
+      },
+      {
+        "id": "431",
+        "rank": "27",
+        "rating": "8.1",
+        "title": "Paper Moon (1973)",
+        "year": "1970-1979",
+        "state": "ms"
+      },
+      {
+        "id": "432",
+        "rank": "28",
+        "rating": "8.1",
+        "title": "Angst essen Seele auf (1974)",
+        "year": "1970-1979",
+        "state": "ms"
+      },
+      {
+        "id": "433",
+        "rank": "29",
+        "rating": "8.1",
+        "title": "Autumn Sonata (1978)",
+        "year": "1970-1979",
+        "state": "ms"
+      },
+      {
+        "id": "434",
+        "rank": "30",
+        "rating": "8.1",
+        "title": "Barry Lyndon (1975)",
+        "year": "1970-1979",
+        "state": "ms"
+      },
+      {
+        "id": "435",
+        "rank": "31",
+        "rating": "8.1",
+        "title": "Le cercle rouge (1970)",
+        "year": "1970-1979",
+        "state": "ms"
+      },
+      {
+        "id": "436",
+        "rank": "32",
+        "rating": "8.0",
+        "title": "Rocky (1976)",
+        "year": "1970-1979",
+        "state": "ms"
+      },
+      {
+        "id": "437",
+        "rank": "33",
+        "rating": "8.0",
+        "title": "The Exorcist (1973)",
+        "year": "1970-1979",
+        "state": "ms"
+      },
+      {
+        "id": "438",
+        "rank": "34",
+        "rating": "8.0",
+        "title": "The Conformist (1970)",
+        "year": "1970-1979",
+        "state": "ms"
+      },
+      {
+        "id": "439",
+        "rank": "35",
+        "rating": "8.0",
+        "title": "The Last Picture Show (1971)",
+        "year": "1970-1979",
+        "state": "ms"
+      },
+      {
+        "id": "440",
+        "rank": "36",
+        "rating": "8.0",
+        "title": "The Message (1977)",
+        "year": "1970-1979",
+        "state": "ms"
+      },
+      {
+        "id": "441",
+        "rank": "37",
+        "rating": "8.0",
+        "title": "Aguirre: The Wrath of God (1972)",
+        "year": "1970-1979",
+        "state": "ms"
+      },
+      {
+        "id": "442",
+        "rank": "38",
+        "rating": "8.0",
+        "title": "A Woman Under the Influence (1974)",
+        "year": "1970-1979",
+        "state": "ms"
+      },
+      {
+        "id": "443",
+        "rank": "39",
+        "rating": "8.0",
+        "title": "Manhattan (1979)",
+        "year": "1970-1979",
+        "state": "ms"
+      },
+      {
+        "id": "444",
+        "rank": "40",
+        "rating": "8.0",
+        "title": "Sholay (1975)",
+        "year": "1970-1979",
+        "state": "ms"
+      },
+      {
+        "id": "445",
+        "rank": "41",
+        "rating": "8.0",
+        "title": "Papillon (1973)",
+        "year": "1970-1979",
+        "state": "ms"
+      },
+      {
+        "id": "446",
+        "rank": "42",
+        "rating": "8.0",
+        "title": "Patton (1970)",
+        "year": "1970-1979",
+        "state": "ms"
+      },
+      {
+        "id": "447",
+        "rank": "43",
+        "rating": "8.0",
+        "title": "All the President's Men (1976)",
+        "year": "1970-1979",
+        "state": "ms"
+      },
+      {
+        "id": "448",
+        "rank": "44",
+        "rating": "8.0",
+        "title": "Cries & Whispers (1972)",
+        "year": "1970-1979",
+        "state": "ms"
+      },
+      {
+        "id": "449",
+        "rank": "45",
+        "rating": "8.0",
+        "title": "The Conversation (1974)",
+        "year": "1970-1979",
+        "state": "ms"
+      },
+      {
+        "id": "450",
+        "rank": "46",
+        "rating": "8.0",
+        "title": "Solaris (1972)",
+        "year": "1970-1979",
+        "state": "ms"
+      },
+      {
+        "id": "451",
+        "rank": "47",
+        "rating": "8.0",
+        "title": "Dawn of the Dead (1978)",
+        "year": "1970-1979",
+        "state": "ms"
+      },
+      {
+        "id": "452",
+        "rank": "48",
+        "rating": "8.0",
+        "title": "Harold and Maude (1971)",
+        "year": "1970-1979",
+        "state": "ms"
+      },
+      {
+        "id": "453",
+        "rank": "49",
+        "rating": "8.0",
+        "title": "Being There (1979)",
+        "year": "1970-1979",
+        "state": "ms"
+      },
+      {
+        "id": "454",
+        "rank": "50",
+        "rating": "8.0",
+        "title": "Young Frankenstein (1974)",
+        "year": "1970-1979",
+        "state": "ms"
+      },
+      {
+        "id": "455",
+        "rank": "1",
+        "rating": "8.8",
+        "title": "Star Wars: Episode V - The Empire Strikes Back (1980)",
+        "year": "1980-1989",
+        "state": "ms"
+      },
+      {
+        "id": "456",
+        "rank": "2",
+        "rating": "8.7",
+        "title": "Raiders of the Lost Ark (1981)",
+        "year": "1980-1989",
+        "state": "ms"
+      },
+      {
+        "id": "457",
+        "rank": "3",
+        "rating": "8.5",
+        "title": "The Shining (1980)",
+        "year": "1980-1989",
+        "state": "ms"
+      },
+      {
+        "id": "458",
+        "rank": "4",
+        "rating": "8.5",
+        "title": "Back to the Future (1985)",
+        "year": "1980-1989",
+        "state": "ms"
+      },
+      {
+        "id": "459",
+        "rank": "5",
+        "rating": "8.5",
+        "title": "Aliens (1986)",
+        "year": "1980-1989",
+        "state": "ms"
+      },
+      {
+        "id": "460",
+        "rank": "6",
+        "rating": "8.4",
+        "title": "Das Boot (1981)",
+        "year": "1980-1989",
+        "state": "ms"
+      },
+      {
+        "id": "461",
+        "rank": "7",
+        "rating": "8.4",
+        "title": "Cinema Paradiso (1988)",
+        "year": "1980-1989",
+        "state": "ms"
+      },
+      {
+        "id": "462",
+        "rank": "8",
+        "rating": "8.4",
+        "title": "Who's Singin' Over There? (1980)",
+        "year": "1980-1989",
+        "state": "ms"
+      },
+      {
+        "id": "463",
+        "rank": "9",
+        "rating": "8.4",
+        "title": "Once Upon a Time in America (1984)",
+        "year": "1980-1989",
+        "state": "ms"
+      },
+      {
+        "id": "464",
+        "rank": "10",
+        "rating": "8.4",
+        "title": "Full Metal Jacket (1987)",
+        "year": "1980-1989",
+        "state": "ms"
+      },
+      {
+        "id": "465",
+        "rank": "11",
+        "rating": "8.4",
+        "title": "Amadeus (1984)",
+        "year": "1980-1989",
+        "state": "ms"
+      },
+      {
+        "id": "466",
+        "rank": "12",
+        "rating": "8.4",
+        "title": "Raging Bull (1980)",
+        "year": "1980-1989",
+        "state": "ms"
+      },
+      {
+        "id": "467",
+        "rank": "13",
+        "rating": "8.3",
+        "title": "Star Wars: Episode VI  Return of the Jedi (1983)",
+        "year": "1980-1989",
+        "state": "ms"
+      },
+      {
+        "id": "468",
+        "rank": "14",
+        "rating": "8.3",
+        "title": "Grave of the Fireflies (1988)",
+        "year": "1980-1989",
+        "state": "ms"
+      },
+      {
+        "id": "469",
+        "rank": "15",
+        "rating": "8.3",
+        "title": "Indiana Jones and the Last Crusade (1989)",
+        "year": "1980-1989",
+        "state": "ms"
+      },
+      {
+        "id": "470",
+        "rank": "16",
+        "rating": "8.3",
+        "title": "The Elephant Man (1980)",
+        "year": "1980-1989",
+        "state": "ms"
+      },
+      {
+        "id": "471",
+        "rank": "17",
+        "rating": "8.3",
+        "title": "Die Hard (1988)",
+        "year": "1980-1989",
+        "state": "ms"
+      },
+      {
+        "id": "472",
+        "rank": "18",
+        "rating": "8.3",
+        "title": "Ran (1985)",
+        "year": "1980-1989",
+        "state": "ms"
+      },
+      {
+        "id": "473",
+        "rank": "19",
+        "rating": "8.3",
+        "title": "A Short Film About Love (1988)",
+        "year": "1980-1989",
+        "state": "ms"
+      },
+      {
+        "id": "474",
+        "rank": "20",
+        "rating": "8.2",
+        "title": "Blade Runner (1982)",
+        "year": "1980-1989",
+        "state": "ms"
+      },
+      {
+        "id": "475",
+        "rank": "21",
+        "rating": "8.2",
+        "title": "The Marathon Family (1982)",
+        "year": "1980-1989",
+        "state": "ms"
+      },
+      {
+        "id": "476",
+        "rank": "22",
+        "rating": "8.2",
+        "title": "Scarface (1983)",
+        "year": "1980-1989",
+        "state": "ms"
+      },
+      {
+        "id": "477",
+        "rank": "23",
+        "rating": "8.2",
+        "title": "Come and See (1985)",
+        "year": "1980-1989",
+        "state": "ms"
+      },
+      {
+        "id": "478",
+        "rank": "24",
+        "rating": "8.2",
+        "title": "Platoon (1986)",
+        "year": "1980-1989",
+        "state": "ms"
+      },
+      {
+        "id": "479",
+        "rank": "25",
+        "rating": "8.2",
+        "title": "The Thing (1982)",
+        "year": "1980-1989",
+        "state": "ms"
+      },
+      {
+        "id": "480",
+        "rank": "26",
+        "rating": "8.2",
+        "title": "My Neighbor Totoro (1988)",
+        "year": "1980-1989",
+        "state": "ms"
+      },
+      {
+        "id": "481",
+        "rank": "27",
+        "rating": "8.1",
+        "title": "Fanny and Alexander (1982)",
+        "year": "1980-1989",
+        "state": "ms"
+      },
+      {
+        "id": "482",
+        "rank": "28",
+        "rating": "8.1",
+        "title": "Stand by Me (1986)",
+        "year": "1980-1989",
+        "state": "ms"
+      },
+      {
+        "id": "483",
+        "rank": "29",
+        "rating": "8.1",
+        "title": "The Terminator (1984)",
+        "year": "1980-1989",
+        "state": "ms"
+      },
+      {
+        "id": "484",
+        "rank": "30",
+        "rating": "8.1",
+        "title": "Gandhi (1982)",
+        "year": "1980-1989",
+        "state": "ms"
+      },
+      {
+        "id": "485",
+        "rank": "31",
+        "rating": "8.1",
+        "title": "A Short Film About Killing (1988)",
+        "year": "1980-1989",
+        "state": "ms"
+      },
+      {
+        "id": "486",
+        "rank": "32",
+        "rating": "8.1",
+        "title": "The Princess Bride (1987)",
+        "year": "1980-1989",
+        "state": "ms"
+      },
+      {
+        "id": "487",
+        "rank": "33",
+        "rating": "8.1",
+        "title": "Nausica of the Valley of the Wind (1984)",
+        "year": "1980-1989",
+        "state": "ms"
+      },
+      {
+        "id": "488",
+        "rank": "34",
+        "rating": "8.0",
+        "title": "Au Revoir Les Enfants (1987)",
+        "year": "1980-1989",
+        "state": "ms"
+      },
+      {
+        "id": "489",
+        "rank": "35",
+        "rating": "8.0",
+        "title": "Castle in the Sky (1986)",
+        "year": "1980-1989",
+        "state": "ms"
+      },
+      {
+        "id": "490",
+        "rank": "36",
+        "rating": "8.0",
+        "title": "Fitzcarraldo (1982)",
+        "year": "1980-1989",
+        "state": "ms"
+      },
+      {
+        "id": "491",
+        "rank": "37",
+        "rating": "8.0",
+        "title": "Time of the Gypsies (1988)",
+        "year": "1980-1989",
+        "state": "ms"
+      },
+      {
+        "id": "492",
+        "rank": "38",
+        "rating": "8.0",
+        "title": "Paris, Texas (1984)",
+        "year": "1980-1989",
+        "state": "ms"
+      },
+      {
+        "id": "493",
+        "rank": "39",
+        "rating": "8.0",
+        "title": "A Christmas Story (1983)",
+        "year": "1980-1989",
+        "state": "ms"
+      },
+      {
+        "id": "494",
+        "rank": "40",
+        "rating": "8.0",
+        "title": "Crimes and Misdemeanors (1989)",
+        "year": "1980-1989",
+        "state": "ms"
+      },
+      {
+        "id": "495",
+        "rank": "41",
+        "rating": "8.0",
+        "title": "Rain Man (1988)",
+        "year": "1980-1989",
+        "state": "ms"
+      },
+      {
+        "id": "496",
+        "rank": "42",
+        "rating": "8.0",
+        "title": "The Untouchables (1987)",
+        "year": "1980-1989",
+        "state": "ms"
+      },
+      {
+        "id": "497",
+        "rank": "43",
+        "rating": "8.0",
+        "title": "Wings of Desire (1987)",
+        "year": "1980-1989",
+        "state": "ms"
+      },
+      {
+        "id": "498",
+        "rank": "44",
+        "rating": "8.0",
+        "title": "Manon des sources (1986)",
+        "year": "1980-1989",
+        "state": "ms"
+      },
+      {
+        "id": "499",
+        "rank": "45",
+        "rating": "8.0",
+        "title": "Brazil (1985)",
+        "year": "1980-1989",
+        "state": "ms"
+      },
+      {
+        "id": "500",
+        "rank": "46",
+        "rating": "8.0",
+        "title": "Jean de Florette (1986)",
+        "year": "1980-1989",
+        "state": "ms"
+      },
+      {
+        "id": "501",
+        "rank": "47",
+        "rating": "7.9",
+        "title": "This Is Spinal Tap (1984)",
+        "year": "1980-1989",
+        "state": "ms"
+      },
+      {
+        "id": "502",
+        "rank": "48",
+        "rating": "7.9",
+        "title": "Hannah and Her Sisters (1986)",
+        "year": "1980-1989",
+        "state": "ms"
+      },
+      {
+        "id": "503",
+        "rank": "49",
+        "rating": "7.9",
+        "title": "Nostalghia (1983)",
+        "year": "1980-1989",
+        "state": "ms"
+      },
+      {
+        "id": "504",
+        "rank": "50",
+        "rating": "7.9",
+        "title": "Glory (1989)",
+        "year": "1980-1989",
+        "state": "ms"
+      },
+      {
+        "id": "505",
+        "rank": "1",
+        "rating": "9.2",
+        "title": "The Shawshank Redemption (1994)",
+        "year": "1990-1999",
+        "state": "ms"
+      },
+      {
+        "id": "506",
+        "rank": "2",
+        "rating": "8.9",
+        "title": "Pulp Fiction (1994)",
+        "year": "1990-1999",
+        "state": "ms"
+      },
+      {
+        "id": "507",
+        "rank": "3",
+        "rating": "8.9",
+        "title": "Schindler's List (1993)",
+        "year": "1990-1999",
+        "state": "ms"
+      },
+      {
+        "id": "508",
+        "rank": "4",
+        "rating": "8.8",
+        "title": "Fight Club (1999)",
+        "year": "1990-1999",
+        "state": "ms"
+      },
+      {
+        "id": "509",
+        "rank": "5",
+        "rating": "8.8",
+        "title": "Goodfellas (1990)",
+        "year": "1990-1999",
+        "state": "ms"
+      },
+      {
+        "id": "510",
+        "rank": "6",
+        "rating": "8.7",
+        "title": "The Matrix (1999)",
+        "year": "1990-1999",
+        "state": "ms"
+      },
+      {
+        "id": "511",
+        "rank": "7",
+        "rating": "8.7",
+        "title": "Forrest Gump (1994)",
+        "year": "1990-1999",
+        "state": "ms"
+      },
+      {
+        "id": "512",
+        "rank": "8",
+        "rating": "8.7",
+        "title": "The Silence of the Lambs (1991)",
+        "year": "1990-1999",
+        "state": "ms"
+      },
+      {
+        "id": "513",
+        "rank": "9",
+        "rating": "8.7",
+        "title": "Se7en (1995)",
+        "year": "1990-1999",
+        "state": "ms"
+      },
+      {
+        "id": "514",
+        "rank": "10",
+        "rating": "8.7",
+        "title": "The Usual Suspects (1995)",
+        "year": "1990-1999",
+        "state": "ms"
+      },
+      {
+        "id": "515",
+        "rank": "11",
+        "rating": "8.6",
+        "title": "Leon: The Professional (1994)",
+        "year": "1990-1999",
+        "state": "ms"
+      },
+      {
+        "id": "516",
+        "rank": "12",
+        "rating": "8.6",
+        "title": "American History X (1998)",
+        "year": "1990-1999",
+        "state": "ms"
+      },
+      {
+        "id": "517",
+        "rank": "13",
+        "rating": "8.6",
+        "title": "Terminator 2: Judgment Day (1991)",
+        "year": "1990-1999",
+        "state": "ms"
+      },
+      {
+        "id": "518",
+        "rank": "14",
+        "rating": "8.5",
+        "title": "Saving Private Ryan (1998)",
+        "year": "1990-1999",
+        "state": "ms"
+      },
+      {
+        "id": "519",
+        "rank": "15",
+        "rating": "8.5",
+        "title": "American Beauty (1999)",
+        "year": "1990-1999",
+        "state": "ms"
+      },
+      {
+        "id": "520",
+        "rank": "16",
+        "rating": "8.5",
+        "title": "Life Is Beautiful (1997)",
+        "year": "1990-1999",
+        "state": "ms"
+      },
+      {
+        "id": "521",
+        "rank": "17",
+        "rating": "8.4",
+        "title": "Reservoir Dogs (1992)",
+        "year": "1990-1999",
+        "state": "ms"
+      },
+      {
+        "id": "522",
+        "rank": "18",
+        "rating": "8.4",
+        "title": "The Green Mile (1999)",
+        "year": "1990-1999",
+        "state": "ms"
+      },
+      {
+        "id": "523",
+        "rank": "19",
+        "rating": "8.4",
+        "title": "L.A. Confidential (1997)",
+        "year": "1990-1999",
+        "state": "ms"
+      },
+      {
+        "id": "524",
+        "rank": "20",
+        "rating": "8.4",
+        "title": "Princess Mononoke (1997)",
+        "year": "1990-1999",
+        "state": "ms"
+      },
+      {
+        "id": "525",
+        "rank": "21",
+        "rating": "8.3",
+        "title": "The Lion King (1994)",
+        "year": "1990-1999",
+        "state": "ms"
+      },
+      {
+        "id": "526",
+        "rank": "22",
+        "rating": "8.3",
+        "title": "Braveheart (1995)",
+        "year": "1990-1999",
+        "state": "ms"
+      },
+      {
+        "id": "527",
+        "rank": "23",
+        "rating": "8.3",
+        "title": "Unforgiven (1992)",
+        "year": "1990-1999",
+        "state": "ms"
+      },
+      {
+        "id": "528",
+        "rank": "24",
+        "rating": "8.3",
+        "title": "Heat (1995)",
+        "year": "1990-1999",
+        "state": "ms"
+      },
+      {
+        "id": "529",
+        "rank": "25",
+        "rating": "8.3",
+        "title": "Toy Story (1995)",
+        "year": "1990-1999",
+        "state": "ms"
+      },
+      {
+        "id": "530",
+        "rank": "26",
+        "rating": "8.2",
+        "title": "Fargo (1996)",
+        "year": "1990-1999",
+        "state": "ms"
+      },
+      {
+        "id": "531",
+        "rank": "27",
+        "rating": "8.2",
+        "title": "The Big Lebowski (1998)",
+        "year": "1990-1999",
+        "state": "ms"
+      },
+      {
+        "id": "532",
+        "rank": "28",
+        "rating": "8.2",
+        "title": "Lock, Stock and Two Smoking Barrels (1998)",
+        "year": "1990-1999",
+        "state": "ms"
+      },
+      {
+        "id": "533",
+        "rank": "29",
+        "rating": "8.2",
+        "title": "Eskiya (1996)",
+        "year": "1990-1999",
+        "state": "ms"
+      },
+      {
+        "id": "534",
+        "rank": "30",
+        "rating": "8.2",
+        "title": "The Sixth Sense (1999)",
+        "year": "1990-1999",
+        "state": "ms"
+      },
+      {
+        "id": "535",
+        "rank": "31",
+        "rating": "8.2",
+        "title": "Casino (1995)",
+        "year": "1990-1999",
+        "state": "ms"
+      },
+      {
+        "id": "536",
+        "rank": "32",
+        "rating": "8.2",
+        "title": "Trainspotting (1996)",
+        "year": "1990-1999",
+        "state": "ms"
+      },
+      {
+        "id": "537",
+        "rank": "33",
+        "rating": "8.1",
+        "title": "Good Will Hunting (1997)",
+        "year": "1990-1999",
+        "state": "ms"
+      },
+      {
+        "id": "538",
+        "rank": "34",
+        "rating": "8.1",
+        "title": "Children of Heaven (1997)",
+        "year": "1990-1999",
+        "state": "ms"
+      },
+      {
+        "id": "539",
+        "rank": "35",
+        "rating": "8.1",
+        "title": "Groundhog Day (1993)",
+        "year": "1990-1999",
+        "state": "ms"
+      },
+      {
+        "id": "540",
+        "rank": "36",
+        "rating": "8.1",
+        "title": "Raise the Red Lantern (1991)",
+        "year": "1990-1999",
+        "state": "ms"
+      },
+      {
+        "id": "541",
+        "rank": "37",
+        "rating": "8.1",
+        "title": "Twelve Monkeys (1995)",
+        "year": "1990-1999",
+        "state": "ms"
+      },
+      {
+        "id": "542",
+        "rank": "38",
+        "rating": "8.1",
+        "title": "Andaz Apna Apna (1994)",
+        "year": "1990-1999",
+        "state": "ms"
+      },
+      {
+        "id": "543",
+        "rank": "39",
+        "rating": "8.1",
+        "title": "Underground (1995)",
+        "year": "1990-1999",
+        "state": "ms"
+      },
+      {
+        "id": "544",
+        "rank": "40",
+        "rating": "8.0",
+        "title": "In the Name of the Father (1993)",
+        "year": "1990-1999",
+        "state": "ms"
+      },
+      {
+        "id": "545",
+        "rank": "41",
+        "rating": "8.0",
+        "title": "La haine (1995)",
+        "year": "1990-1999",
+        "state": "ms"
+      },
+      {
+        "id": "546",
+        "rank": "42",
+        "rating": "8.0",
+        "title": "Three Colors: Red (1994)",
+        "year": "1990-1999",
+        "state": "ms"
+      },
+      {
+        "id": "547",
+        "rank": "43",
+        "rating": "8.0",
+        "title": "Festen (1998)",
+        "year": "1990-1999",
+        "state": "ms"
+      },
+      {
+        "id": "548",
+        "rank": "44",
+        "rating": "8.0",
+        "title": "Beauty and the Beast (1991)",
+        "year": "1990-1999",
+        "state": "ms"
+      },
+      {
+        "id": "549",
+        "rank": "45",
+        "rating": "8.0",
+        "title": "The Truman Show (1998)",
+        "year": "1990-1999",
+        "state": "ms"
+      },
+      {
+        "id": "550",
+        "rank": "46",
+        "rating": "8.0",
+        "title": "Huozhe (1994)",
+        "year": "1990-1999",
+        "state": "ms"
+      },
+      {
+        "id": "551",
+        "rank": "47",
+        "rating": "8.0",
+        "title": "Before Sunrise (1995)",
+        "year": "1990-1999",
+        "state": "ms"
+      },
+      {
+        "id": "552",
+        "rank": "48",
+        "rating": "8.0",
+        "title": "Chungking Express (1994)",
+        "year": "1990-1999",
+        "state": "ms"
+      },
+      {
+        "id": "553",
+        "rank": "49",
+        "rating": "8.0",
+        "title": "Ed Wood (1994)",
+        "year": "1990-1999",
+        "state": "ms"
+      },
+      {
+        "id": "554",
+        "rank": "50",
+        "rating": "8.0",
+        "title": "The Nightmare Before Christmas (1993)",
+        "year": "1990-1999",
+        "state": "ms"
+      },
+      {
+        "id": "555",
+        "rank": "1",
+        "rating": "8.9",
+        "title": "The Dark Knight (2008)",
+        "year": "2000-2009",
+        "state": "ms"
+      },
+      {
+        "id": "556",
+        "rank": "2",
+        "rating": "8.8",
+        "title": "The Lord of the Rings: The Return of the King (2003)",
+        "year": "2000-2009",
+        "state": "ms"
+      },
+      {
+        "id": "557",
+        "rank": "3",
+        "rating": "8.8",
+        "title": "The Lord of the Rings: The Fellowship of the Ring (2001)",
+        "year": "2000-2009",
+        "state": "ms"
+      },
+      {
+        "id": "558",
+        "rank": "4",
+        "rating": "8.7",
+        "title": "City of God (2002)",
+        "year": "2000-2009",
+        "state": "ms"
+      },
+      {
+        "id": "559",
+        "rank": "5",
+        "rating": "8.7",
+        "title": "The Lord of the Rings: The Two Towers (2002)",
+        "year": "2000-2009",
+        "state": "ms"
+      },
+      {
+        "id": "560",
+        "rank": "6",
+        "rating": "8.6",
+        "title": "Memento (2000)",
+        "year": "2000-2009",
+        "state": "ms"
+      },
+      {
+        "id": "561",
+        "rank": "7",
+        "rating": "8.5",
+        "title": "Spirited Away (2001)",
+        "year": "2000-2009",
+        "state": "ms"
+      },
+      {
+        "id": "562",
+        "rank": "8",
+        "rating": "8.5",
+        "title": "The Pianist (2002)",
+        "year": "2000-2009",
+        "state": "ms"
+      },
+      {
+        "id": "563",
+        "rank": "9",
+        "rating": "8.5",
+        "title": "The Lives of Others (2006)",
+        "year": "2000-2009",
+        "state": "ms"
+      },
+      {
+        "id": "564",
+        "rank": "10",
+        "rating": "8.5",
+        "title": "The Departed (2006)",
+        "year": "2000-2009",
+        "state": "ms"
+      },
+      {
+        "id": "565",
+        "rank": "11",
+        "rating": "8.5",
+        "title": "WALL E (2008)",
+        "year": "2000-2009",
+        "state": "ms"
+      },
+      {
+        "id": "566",
+        "rank": "12",
+        "rating": "8.4",
+        "title": "Amelie (2001)",
+        "year": "2000-2009",
+        "state": "ms"
+      },
+      {
+        "id": "567",
+        "rank": "13",
+        "rating": "8.4",
+        "title": "Gladiator (2000)",
+        "year": "2000-2009",
+        "state": "ms"
+      },
+      {
+        "id": "568",
+        "rank": "14",
+        "rating": "8.4",
+        "title": "The Prestige (2006)",
+        "year": "2000-2009",
+        "state": "ms"
+      },
+      {
+        "id": "569",
+        "rank": "15",
+        "rating": "8.4",
+        "title": "Requiem for a Dream (2000)",
+        "year": "2000-2009",
+        "state": "ms"
+      },
+      {
+        "id": "570",
+        "rank": "16",
+        "rating": "8.4",
+        "title": "Eternal Sunshine of the Spotless Mind (2004)",
+        "year": "2000-2009",
+        "state": "ms"
+      },
+      {
+        "id": "571",
+        "rank": "17",
+        "rating": "8.4",
+        "title": "Oldboy (2003)",
+        "year": "2000-2009",
+        "state": "ms"
+      },
+      {
+        "id": "572",
+        "rank": "18",
+        "rating": "8.3",
+        "title": "Downfall (2004)",
+        "year": "2000-2009",
+        "state": "ms"
+      },
+      {
+        "id": "573",
+        "rank": "19",
+        "rating": "8.3",
+        "title": "Pan's Labyrinth (2006)",
+        "year": "2000-2009",
+        "state": "ms"
+      },
+      {
+        "id": "574",
+        "rank": "20",
+        "rating": "8.3",
+        "title": "Batman Begins (2005)",
+        "year": "2000-2009",
+        "state": "ms"
+      },
+      {
+        "id": "575",
+        "rank": "21",
+        "rating": "8.3",
+        "title": "Up (2009)",
+        "year": "2000-2009",
+        "state": "ms"
+      },
+      {
+        "id": "576",
+        "rank": "22",
+        "rating": "8.3",
+        "title": "Inglourious Basterds (2009)",
+        "year": "2000-2009",
+        "state": "ms"
+      },
+      {
+        "id": "577",
+        "rank": "23",
+        "rating": "8.3",
+        "title": "Snatch. (2000)",
+        "year": "2000-2009",
+        "state": "ms"
+      },
+      {
+        "id": "578",
+        "rank": "24",
+        "rating": "8.3",
+        "title": "Gran Torino (2008)",
+        "year": "2000-2009",
+        "state": "ms"
+      },
+      {
+        "id": "579",
+        "rank": "25",
+        "rating": "8.2",
+        "title": "Dil Chahta Hai (2001)",
+        "year": "2000-2009",
+        "state": "ms"
+      },
+      {
+        "id": "580",
+        "rank": "26",
+        "rating": "8.2",
+        "title": "The Secret in Their Eyes (2009)",
+        "year": "2000-2009",
+        "state": "ms"
+      },
+      {
+        "id": "581",
+        "rank": "27",
+        "rating": "8.2",
+        "title": "Sin City (2005)",
+        "year": "2000-2009",
+        "state": "ms"
+      },
+      {
+        "id": "582",
+        "rank": "28",
+        "rating": "8.2",
+        "title": "Hotel Rwanda (2004)",
+        "year": "2000-2009",
+        "state": "ms"
+      },
+      {
+        "id": "583",
+        "rank": "29",
+        "rating": "8.2",
+        "title": "No Country for Old Men (2007)",
+        "year": "2000-2009",
+        "state": "ms"
+      },
+      {
+        "id": "584",
+        "rank": "30",
+        "rating": "8.2",
+        "title": "A Wednesday (2008)",
+        "year": "2000-2009",
+        "state": "ms"
+      },
+      {
+        "id": "585",
+        "rank": "31",
+        "rating": "8.2",
+        "title": "The Best of Youth (2003)",
+        "year": "2000-2009",
+        "state": "ms"
+      },
+      {
+        "id": "586",
+        "rank": "32",
+        "rating": "8.2",
+        "title": "Rang De Basanti (2006)",
+        "year": "2000-2009",
+        "state": "ms"
+      },
+      {
+        "id": "587",
+        "rank": "33",
+        "rating": "8.2",
+        "title": "Like Stars on Earth (2007)",
+        "year": "2000-2009",
+        "state": "ms"
+      },
+      {
+        "id": "588",
+        "rank": "34",
+        "rating": "8.2",
+        "title": "Kill Bill: Vol. 1 (2003)",
+        "year": "2000-2009",
+        "state": "ms"
+      },
+      {
+        "id": "589",
+        "rank": "35",
+        "rating": "8.2",
+        "title": "Swades: We, the People (2004)",
+        "year": "2000-2009",
+        "state": "ms"
+      },
+      {
+        "id": "590",
+        "rank": "36",
+        "rating": "8.1",
+        "title": "Mary and Max (2009)",
+        "year": "2000-2009",
+        "state": "ms"
+      },
+      {
+        "id": "591",
+        "rank": "37",
+        "rating": "8.1",
+        "title": "Into the Wild (2007)",
+        "year": "2000-2009",
+        "state": "ms"
+      },
+      {
+        "id": "592",
+        "rank": "38",
+        "rating": "8.1",
+        "title": "Memories of Murder (2003)",
+        "year": "2000-2009",
+        "state": "ms"
+      },
+      {
+        "id": "593",
+        "rank": "39",
+        "rating": "8.1",
+        "title": "A Moment to Remember (2004)",
+        "year": "2000-2009",
+        "state": "ms"
+      },
+      {
+        "id": "594",
+        "rank": "40",
+        "rating": "8.1",
+        "title": "Amores perros (2000)",
+        "year": "2000-2009",
+        "state": "ms"
+      },
+      {
+        "id": "595",
+        "rank": "41",
+        "rating": "8.1",
+        "title": "Donnie Darko (2001)",
+        "year": "2000-2009",
+        "state": "ms"
+      },
+      {
+        "id": "596",
+        "rank": "42",
+        "rating": "8.1",
+        "title": "Million Dollar Baby (2004)",
+        "year": "2000-2009",
+        "state": "ms"
+      },
+      {
+        "id": "597",
+        "rank": "43",
+        "rating": "8.1",
+        "title": "Finding Nemo (2003)",
+        "year": "2000-2009",
+        "state": "ms"
+      },
+      {
+        "id": "598",
+        "rank": "44",
+        "rating": "8.1",
+        "title": "There Will Be Blood (2007)",
+        "year": "2000-2009",
+        "state": "ms"
+      },
+      {
+        "id": "599",
+        "rank": "45",
+        "rating": "8.1",
+        "title": "V for Vendetta (2005)",
+        "year": "2000-2009",
+        "state": "ms"
+      },
+      {
+        "id": "600",
+        "rank": "46",
+        "rating": "8.1",
+        "title": "Munnabhai M.B.B.S. (2003)",
+        "year": "2000-2009",
+        "state": "ms"
+      },
+      {
+        "id": "601",
+        "rank": "47",
+        "rating": "8.1",
+        "title": "Departures (2008)",
+        "year": "2000-2009",
+        "state": "ms"
+      },
+      {
+        "id": "602",
+        "rank": "48",
+        "rating": "8.1",
+        "title": "The Bourne Ultimatum (2007)",
+        "year": "2000-2009",
+        "state": "ms"
+      },
+      {
+        "id": "603",
+        "rank": "49",
+        "rating": "8.1",
+        "title": "Howl's Moving Castle (2004)",
+        "year": "2000-2009",
+        "state": "ms"
+      },
+      {
+        "id": "604",
+        "rank": "50",
+        "rating": "8.1",
+        "title": "Slumdog Millionaire (2008)",
+        "year": "2000-2009",
+        "state": "ms"
+      },
+      {
+        "id": "605",
+        "rank": "1",
+        "rating": "8.8",
+        "title": "Inception (2010)",
+        "year": "2010-2019",
+        "state": "ms"
+      },
+      {
+        "id": "606",
+        "rank": "2",
+        "rating": "8.7",
+        "title": "The Dark Knight Rises (2012)",
+        "year": "2010-2019",
+        "state": "ms"
+      },
+      {
+        "id": "607",
+        "rank": "3",
+        "rating": "8.5",
+        "title": "Toy Story 3 (2010)",
+        "year": "2010-2019",
+        "state": "ms"
+      },
+      {
+        "id": "608",
+        "rank": "4",
+        "rating": "8.5",
+        "title": "The Avengers (2012)",
+        "year": "2010-2019",
+        "state": "ms"
+      },
+      {
+        "id": "609",
+        "rank": "5",
+        "rating": "8.5",
+        "title": "The Intouchables (2011)",
+        "year": "2010-2019",
+        "state": "ms"
+      },
+      {
+        "id": "610",
+        "rank": "6",
+        "rating": "8.4",
+        "title": "A Separation (2011)",
+        "year": "2010-2019",
+        "state": "ms"
+      },
+      {
+        "id": "611",
+        "rank": "7",
+        "rating": "8.3",
+        "title": "Moonrise Kingdom (2012)",
+        "year": "2010-2019",
+        "state": "ms"
+      },
+      {
+        "id": "612",
+        "rank": "8",
+        "rating": "8.2",
+        "title": "Gangs of Wasseypur (2012)",
+        "year": "2010-2019",
+        "state": "ms"
+      },
+      {
+        "id": "613",
+        "rank": "9",
+        "rating": "8.2",
+        "title": "Warrior (2011/I)",
+        "year": "2010-2019",
+        "state": "ms"
+      },
+      {
+        "id": "614",
+        "rank": "10",
+        "rating": "8.2",
+        "title": "The King's Speech (2010)",
+        "year": "2010-2019",
+        "state": "ms"
+      },
+      {
+        "id": "615",
+        "rank": "11",
+        "rating": "8.1",
+        "title": "Black Swan (2010)",
+        "year": "2010-2019",
+        "state": "ms"
+      },
+      {
+        "id": "616",
+        "rank": "12",
+        "rating": "8.1",
+        "title": "The Artist (2011/I)",
+        "year": "2010-2019",
+        "state": "ms"
+      },
+      {
+        "id": "617",
+        "rank": "13",
+        "rating": "8.1",
+        "title": "How to Train Your Dragon (2010)",
+        "year": "2010-2019",
+        "state": "ms"
+      },
+      {
+        "id": "618",
+        "rank": "14",
+        "rating": "8.1",
+        "title": "Incendies (2010)",
+        "year": "2010-2019",
+        "state": "ms"
+      },
+      {
+        "id": "619",
+        "rank": "15",
+        "rating": "8.1",
+        "title": "Elite Squad: The Enemy Within (2010)",
+        "year": "2010-2019",
+        "state": "ms"
+      },
+      {
+        "id": "620",
+        "rank": "16",
+        "rating": "8.0",
+        "title": "Harry Potter and the Deathly Hallows: Part 2 (2011)",
+        "year": "2010-2019",
+        "state": "ms"
+      },
+      {
+        "id": "621",
+        "rank": "17",
+        "rating": "8.0",
+        "title": "Udaan (2010)",
+        "year": "2010-2019",
+        "state": "ms"
+      },
+      {
+        "id": "622",
+        "rank": "18",
+        "rating": "8.0",
+        "title": "Kahaani (2012)",
+        "year": "2010-2019",
+        "state": "ms"
+      },
+      {
+        "id": "623",
+        "rank": "19",
+        "rating": "8.0",
+        "title": "The Help (2011)",
+        "year": "2010-2019",
+        "state": "ms"
+      },
+      {
+        "id": "624",
+        "rank": "20",
+        "rating": "8.0",
+        "title": "Shutter Island (2010)",
+        "year": "2010-2019",
+        "state": "ms"
+      },
+      {
+        "id": "625",
+        "rank": "21",
+        "rating": "8.0",
+        "title": "Paan Singh Tomar (2010)",
+        "year": "2010-2019",
+        "state": "ms"
+      },
+      {
+        "id": "626",
+        "rank": "22",
+        "rating": "7.9",
+        "title": "The Social Network (2010)",
+        "year": "2010-2019",
+        "state": "ms"
+      },
+      {
+        "id": "627",
+        "rank": "23",
+        "rating": "7.9",
+        "title": "Drive (2011/I)",
+        "year": "2010-2019",
+        "state": "ms"
+      },
+      {
+        "id": "628",
+        "rank": "24",
+        "rating": "7.9",
+        "title": "The Girl with the Dragon Tattoo (2011)",
+        "year": "2010-2019",
+        "state": "ms"
+      },
+      {
+        "id": "629",
+        "rank": "25",
+        "rating": "7.9",
+        "title": "The Fighter (2010)",
+        "year": "2010-2019",
+        "state": "ms"
+      },
+      {
+        "id": "630",
+        "rank": "26",
+        "rating": "7.8",
+        "title": "Kick-Ass (2010)",
+        "year": "2010-2019",
+        "state": "ms"
+      },
+      {
+        "id": "631",
+        "rank": "27",
+        "rating": "7.8",
+        "title": "50/50 (2011)",
+        "year": "2010-2019",
+        "state": "ms"
+      },
+      {
+        "id": "632",
+        "rank": "28",
+        "rating": "7.8",
+        "title": "The Man from Nowhere (2010)",
+        "year": "2010-2019",
+        "state": "ms"
+      },
+      {
+        "id": "633",
+        "rank": "29",
+        "rating": "7.8",
+        "title": "X-Men: First Class (2011)",
+        "year": "2010-2019",
+        "state": "ms"
+      },
+      {
+        "id": "634",
+        "rank": "30",
+        "rating": "7.8",
+        "title": "True Grit (2010)",
+        "year": "2010-2019",
+        "state": "ms"
+      },
+      {
+        "id": "635",
+        "rank": "31",
+        "rating": "7.8",
+        "title": "Tangled (2010)",
+        "year": "2010-2019",
+        "state": "ms"
+      },
+      {
+        "id": "636",
+        "rank": "32",
+        "rating": "7.8",
+        "title": "The Cabin in the Woods (2011)",
+        "year": "2010-2019",
+        "state": "ms"
+      },
+      {
+        "id": "637",
+        "rank": "33",
+        "rating": "7.8",
+        "title": "I Saw the Devil (2010)",
+        "year": "2010-2019",
+        "state": "ms"
+      },
+      {
+        "id": "638",
+        "rank": "34",
+        "rating": "7.7",
+        "title": "Once Upon a Time in Anatolia (2011)",
+        "year": "2010-2019",
+        "state": "ms"
+      },
+      {
+        "id": "639",
+        "rank": "35",
+        "rating": "7.7",
+        "title": "Vicky Donor (2012)",
+        "year": "2010-2019",
+        "state": "ms"
+      },
+      {
+        "id": "640",
+        "rank": "36",
+        "rating": "7.7",
+        "title": "127 Hours (2010)",
+        "year": "2010-2019",
+        "state": "ms"
+      },
+      {
+        "id": "641",
+        "rank": "37",
+        "rating": "7.7",
+        "title": "Zindagi Na Milegi Dobara (2011)",
+        "year": "2010-2019",
+        "state": "ms"
+      },
+      {
+        "id": "642",
+        "rank": "38",
+        "rating": "7.7",
+        "title": "Midnight in Paris (2011)",
+        "year": "2010-2019",
+        "state": "ms"
+      },
+      {
+        "id": "643",
+        "rank": "39",
+        "rating": "7.7",
+        "title": "Confessions (2010)",
+        "year": "2010-2019",
+        "state": "ms"
+      },
+      {
+        "id": "644",
+        "rank": "40",
+        "rating": "7.7",
+        "title": "The Raid (2011)",
+        "year": "2010-2019",
+        "state": "ms"
+      },
+      {
+        "id": "645",
+        "rank": "41",
+        "rating": "7.7",
+        "title": "Hugo (2011)",
+        "year": "2010-2019",
+        "state": "ms"
+      },
+      {
+        "id": "646",
+        "rank": "42",
+        "rating": "7.7",
+        "title": "Detachment (2011)",
+        "year": "2010-2019",
+        "state": "ms"
+      },
+      {
+        "id": "647",
+        "rank": "43",
+        "rating": "7.7",
+        "title": "13 Assassins (2010)",
+        "year": "2010-2019",
+        "state": "ms"
+      },
+      {
+        "id": "648",
+        "rank": "44",
+        "rating": "7.6",
+        "title": "Moneyball (2011)",
+        "year": "2010-2019",
+        "state": "ms"
+      },
+      {
+        "id": "649",
+        "rank": "45",
+        "rating": "7.6",
+        "title": "Arrietty (2010)",
+        "year": "2010-2019",
+        "state": "ms"
+      },
+      {
+        "id": "650",
+        "rank": "46",
+        "rating": "7.6",
+        "title": "The Skin I Live In (2011)",
+        "year": "2010-2019",
+        "state": "ms"
+      },
+      {
+        "id": "651",
+        "rank": "47",
+        "rating": "7.6",
+        "title": "Rise of the Planet of the Apes (2011)",
+        "year": "2010-2019",
+        "state": "ms"
+      },
+      {
+        "id": "652",
+        "rank": "48",
+        "rating": "7.6",
+        "title": "In a Better World (2010)",
+        "year": "2010-2019",
+        "state": "ms"
+      },
+      {
+        "id": "653",
+        "rank": "49",
+        "rating": "7.6",
+        "title": "The Town (2010)",
+        "year": "2010-2019",
+        "state": "ms"
+      },
+      {
+        "id": "654",
+        "rank": "50",
+        "rating": "7.6",
+        "title": "Harry Potter and the Deathly Hallows: Part 1 (2010)",
+        "year": "2010-2019",
+        "state": "ms"
+      }
+    ]
+  }
+};
+
+//get the saved data if any
+if(localStorage.getItem('Best250SavedData')){
+
+      jsonObj = JSON.parse(localStorage.getItem('Best250SavedData'));
+
+
+}
+
+
+var totalWatched = 0;
+
+
+//iterate the data, 
+$.each(jsonObj.Movies.Movie, function(i, item) {
+
+	//if item state is - watched
+	if(item.state=="wa"){
+
+		    //write it to the div, with the watched icon
+			$("#mainlist").append(
+		
+				"<h4><img id=" + item.id + " val='wa' src='watched.jpeg' width='50' height='50'/>" + item.title + "</h4>"
+				
+			)
+
+			totalWatched = totalWatched + 1;
+	}else{
+
+		    $("#mainlist").append(
+		
+				"<h4><img id=" + item.id + " val='ms' src='must-see.jpeg' width='50' height='50'/>" + item.title + "</h4>"
+			)
+		
+	}
+
+
+});	
+
+//display totals
+displayTotalWatched();
+
+
+//if the icon is clicked - handle it
+$('img').click(function() {
+	
+	
+	//if - must-see icon is the current state	
+	if("ms"==$(this).attr('val')){
+
+		//change it to - watched state
+		$(this).attr('val','wa'); 
+
+		setState(this.id, "wa");
+		
+		$(this).attr('src', function() { 
+
+	    		return "watched.jpeg";
+		
+		});
+
+		
+		totalWatched = totalWatched + 1;
+
+	}else{
+
+		//change state to - must-see
+		$(this).attr('val','ms'); 
+		setState(this.id, "ms");
+
+		$(this).attr('src', function() { 
+	
+	    		return "must-see.jpeg";
+		});
+
+		totalWatched = totalWatched - 1;
+	}
+
+
+//finally save to storage
+localStorage.setItem('Best250SavedData', JSON.stringify(jsonObj));
+
+//display the total
+displayTotalWatched();
+
+});
+
+
+
+/**
+ * Displays the total in the top part of the window
+ */
+function displayTotalWatched(){
+
+
+	$("#totwatched").empty();
+	$("#totwatched").append("Total Watched: " + totalWatched);
+
+}
+
+
+
+/**
+ * Sets the json state attribute
+ */
+function setState(id,state){
+
+	$.each(jsonObj.Movies.Movie, function(i, item) {
+
+		if(id==item.id){
+			
+			item.state = state;		
+		}
+
+	});
+
+}
+
+
+
+
+        </script>
+    </body>
+</html>

@@ -1,0 +1,8 @@
+<resources>
+
+    <string name="app_name">Best250</string>
+    <string name="hello_world">Hello world!</string>
+    <string name="menu_settings">Settings</string>
+    <string name="title_activity_start_best250">Best 250 From imdb.com</string>
+
+</resources>
